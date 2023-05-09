@@ -15,7 +15,7 @@ Tested on
 ## Security
 `Only for Internal Usage`
 - Authentication
-  - Basic authentication
+  - Basic authentication (/inc/config.php)
 
 ```powershell
 $user = "restusername"

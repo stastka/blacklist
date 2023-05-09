@@ -1,4 +1,4 @@
-# Simple blacklist written in PHP
+# Simple single ip blacklist written in PHP
 
 Tested on 
 - Linux:
@@ -42,6 +42,11 @@ helper
 - [x]  POST /\<folder\>/\<alias\>/app/ip/md5
 - [x]  POST /\<folder\>/\<alias\>/app/ip/sha1
 - [x]  POST /\<folder\>/\<alias\>/app/ip/version
+
+## Next Steps
+- IPv6 Support and valdidation
+- IP-Range Support
+
 
 ## License
 

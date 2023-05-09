@@ -11,11 +11,13 @@ Tested on
 
 ## Security
 `Only for Internal Usage`
+- Authentication
+  - Basic authentication
 
-- Input Validaten of
- - Valid IPv4
- - Valid DateTime
- - Validation of uri Path
+- Input Validaten of:
+  - Valid IPv4
+  - Valid DateTime
+  - Validation of uri Path
 
 ## Installation
 - Clone Repo to your Home Webserver
@@ -26,19 +28,22 @@ Tested on
 
 ## APIs
 
-List of IPs and fqdn
+List of IPs and fqdn (json)
 - [x]  GET /\<folder\>/\<alias\>/app/ip/list
 
-List of IPs (raw)
+List of IPs (raw/plain text)
 - [x]  GET /\<folder>\/\<alias\>/app/ip/raw
 - [x]  GET /\<folder\>/\<alias\>/app/ip/raw.txt
 
-changes of IPs
+Get Status of one IP (json)
+- [x]  GET /\<folder>\/\<alias\>/app/ip/show?filter=\<ipv4\>
+
+changes of IPs (json)
 - [x]  POST /\<folder\>/\<alias\>/app/ip/add
 - [x]  POST /\<folder\>/\<alias\>/app/ip/delete
 - [x]  POST /\<folder\>/\<alias\>/app/ip/update
 
-helper 
+helper (raw/plain text)
 - [x]  POST /\<folder\>/\<alias\>/app/ip/md5
 - [x]  POST /\<folder\>/\<alias\>/app/ip/sha1
 - [x]  POST /\<folder\>/\<alias\>/app/ip/version
@@ -46,6 +51,9 @@ helper
 ## Next Steps
 - IPv6 Support and valdidation
 - IP-Range Support
+- ACL, Readonly API-User
+- Caching of List
+- API Keys
 
 
 ## License

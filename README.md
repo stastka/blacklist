@@ -27,21 +27,21 @@ Tested on
 ## APIs
 
 List of IPs and fqdn
-- [x]  GET /<folder>/<alias>/app/ip/list
+- [x]  GET /\<folder\>/\<alias\>/app/ip/list
 
 List of IPs (raw)
-- [x]  GET /<folder>/<alias>/app/ip/raw
-- [x]  GET /<folder>/<alias>/app/ip/raw.txt
+- [x]  GET /\<folder>\/\<alias\>/app/ip/raw
+- [x]  GET /\<folder\>/\<alias\>/app/ip/raw.txt
 
 changes of IPs
-- [x]  POST /<folder>/<alias>/app/ip/add
-- [x]  POST /<folder>/<alias>/app/ip/delete
-- [x]  POST /<folder>/<alias>/app/ip/update
+- [x]  POST /\<folder\>/\<alias\>/app/ip/add
+- [x]  POST /\<folder\>/\<alias\>/app/ip/delete
+- [x]  POST /\<folder\>/\<alias\>/app/ip/update
 
 helper 
-- [x]  POST /<folder>/<alias>/app/ip/md5
-- [x]  POST /<folder>/<alias>/app/ip/sha1
-- [x]  POST /<folder>/<alias>/app/ip/version
+- [x]  POST /\<folder\>/\<alias\>/app/ip/md5
+- [x]  POST /\<folder\>/\<alias\>/app/ip/sha1
+- [x]  POST /\<folder\>/\<alias\>/app/ip/version
 
 ## License
 

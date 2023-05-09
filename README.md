@@ -2,12 +2,15 @@
 
 Tested on 
 - Linux:
-  - Synology DS7.1 
+  - Synology DSM 7.1.x
+  - Ubuntu 22.04 LTS
   - Apache 2.4, php7.4, php8.0 MariaDB 10
 - Windows: 
   - Windows 10
   - Windows Server 2019
-  - IIS10, php8, MySQL 5.6
+  - Ils 10, php8, MySQL 5.6/8
+- Firwall:
+  - opensense (URL Table (IPs))
 
 ## Security
 `Only for Internal Usage`
@@ -55,6 +58,8 @@ helper (raw/plain text)
 - Caching of List
 - API Keys
 
+## Copyright
+    Copyright © 2023 D.Stastka // stastka.ch
 
 ## License
 

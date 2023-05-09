@@ -83,7 +83,7 @@ $Body = @{
     "ip"="$ip"
     "fqdn"="$fqdn"
 }|ConvertTo-Json -Compress 
-Invoke-RestMethod -Uri "https://$server/$app/app/ip/update" -Method POST -Body $Body -Headers $Headers
+Invoke-RestMethod -Uri "https://$server/$app/app/ip/update?mode=full" -Method POST -Body $Body -Headers $Headers
 ```
 
 

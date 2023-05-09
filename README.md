@@ -17,11 +17,25 @@ Tested on
 - Authentication
   - Basic authentication
 
-- Input Validaten of:
+```powershell
+$user = "restusername"
+$pass = "restpassword"
+$pair = "$($user):$($pass)"
+$encodedCreds = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($pair))
+$Headers = @{
+    Authorization = "Basic $encodedCreds"
+}
+```
+
+
+- Input validaten of:
   - Valid IPv4
   - Valid DateTime
   - Validation of uri Path
-
+## Functions
+- Display Ipv4 Ip-list Plain Text (for Firewalls)
+- Singele IPv4 to Add,Update (full), Update (DateTime) or Delete
+- Temporary allow Ip for Internetaccess (DatTime)
 ## Installation
 - Clone Repo to your Home Webserver
 - Create MySQL/MariaDB (Schema on /install/db.sql)
@@ -45,6 +59,34 @@ changes of IPs (json)
 - [x]  POST /\<folder\>/\<alias\>/app/ip/add
 - [x]  POST /\<folder\>/\<alias\>/app/ip/delete
 - [x]  POST /\<folder\>/\<alias\>/app/ip/update
+```powershell
+#Allow IP for 1 Hour
+$server = "server.lan"
+$app ="blacklist"
+[string]$mySqlDateTime = $(get-date).AddHours(1).ToString("yyyy-MM-dd HH:mm:ss")
+[string]$ip = "172.16.4.199"
+$Body = @{
+    "ip"="$ip"
+    "dt"="$mySqlDateTime"
+}| ConvertTo-Json -Compress 
+Invoke-RestMethod -Uri "https://$server/$app/app/ip/update" -Method POST -Body $Body -Headers $Headers
+```
+
+- [x]  POST /\<folder\>/\<alias\>/app/ip/update?mode=full
+```powershell
+#Full Update IP and FQDN
+$server = "server.lan"
+$app ="blacklist"
+[string]$ip = "172.16.4.199"
+[string]$fqdn = "app199.local"
+$Body = @{
+    "ip"="$ip"
+    "fqdn"="$fqdn"
+}|ConvertTo-Json -Compress 
+Invoke-RestMethod -Uri "https://$server/$app/app/ip/update" -Method POST -Body $Body -Headers $Headers
+```
+
+
 
 helper (raw/plain text)
 - [x]  POST /\<folder\>/\<alias\>/app/ip/md5
@@ -63,5 +105,5 @@ helper (raw/plain text)
 
 ## License
 
-MIT
+MIT © [Daniel Stastka](https://github.com/stastka)
 
